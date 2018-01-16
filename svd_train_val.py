@@ -109,7 +109,7 @@ def svd(train, test,length,moviefile):
 				start = end
 
 		#meta_graph_def = tf.train.export_meta_graph(filename='/tmp/tfrecomm.meta')
-		save_path=saver.save(sess,"tfrecomm")
+		save_path=saver.save(sess,"tfrecomm.ckpt")
 		print("Model saved in file: %s" % save_path)
 		sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		# Bind the socket to the port
