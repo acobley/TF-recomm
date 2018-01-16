@@ -42,6 +42,7 @@ if __name__ == '__main__':
        print ("Get Movies Data")
        moviefile,rows = get_movies()
        graph = tf.get_default_graph()
+       tf.train.write_graph(graph, '.','saved_model.pb', as_text=False)       
        infer = graph.get_tensor_by_name("svd_inference:0")
        
        user_batch = graph.get_tensor_by_name("id_user:0")
